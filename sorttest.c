@@ -22,7 +22,7 @@
 
  /**
  * @file
- * Self-contained ANSI C program for testing sorting algorithms.
+ * Self-contained ANSI C program for benchmarking sorting algorithms.
  *
  * @author Nuno Fachada
  * @date 2016
@@ -60,9 +60,7 @@ void sort_bubble(int vec[], int n) {
 			if (vec[y] > vec[y + 1]) {
 
 				aux = vec[y + 1];
-
 				vec[y + 1] = vec[y];
-
 				vec[y] = aux;
 
 			}
@@ -90,17 +88,13 @@ void sort_selection(int vec[], int n) {
 		for (y = x; y < n; y++) {
 
 			if (vec[min_idx] > vec[y]) {
-
 				min_idx = y;
-
 			}
 
 		}
 
 		aux = vec[x];
-
 		vec[x] = vec[min_idx];
-
 		vec[min_idx] = aux;
 
 	}
@@ -189,6 +183,7 @@ void sort_quick(int *vec, int n) {
 
 	/* Partitioning. */
 	for (i = 0, j = n - 1; ; i++, j--) {
+
 		while (vec[i] < p) {
 			i++;
 		}
@@ -198,9 +193,11 @@ void sort_quick(int *vec, int n) {
 		if (i >= j) {
 			break;
 		}
+
 		aux = vec[i];
 		vec[i] = vec[j];
 		vec[j] = aux;
+
 	}
 
 	/* Recursive calls with partitioned sub-arrays. */
@@ -284,6 +281,9 @@ int main(int argc, char* argv[]) {
 				fprintf(stderr, "Sorting did not work!\n");
 				break;
 			}
+		}
+		if (i == numel - 1) {
+			printf("Sorting Ok!\n");
 		}
 	}
 
