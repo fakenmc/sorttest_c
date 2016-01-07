@@ -53,8 +53,7 @@ installed using [Homebrew] or similar, and it is invoked as `gtime`.
 
 It is also possible to use the shell built-in *time* command, which is available
 by default on Linux and OSX. For Windows, [Cygwin] and [MinGW] provide a [Bash]
-shell with this command. Note that redirecting the output of this built-in
-command to a file is [tricky].
+shell with this command, but there are [native alternatives].
 
 ##### Default output format
 
@@ -111,6 +110,7 @@ $ /usr/bin/time -f "%e sec.\n%M Kb\n" ./sorttest quick 100000 128
 [MinGW]: http://www.mingw.org/
 [Bash]: http://tiswww.case.edu/php/chet/bash/bashtop.html
 [tricky]: http://stackoverflow.com/questions/13356628/is-there-a-way-to-redirect-time-output-to-file-in-linux
+[native alternatives]: http://stackoverflow.com/questions/673523/how-to-measure-execution-time-of-command-in-windows-command-line
 [GCC]: https://gcc.gnu.org/
 [clang]: http://clang.llvm.org/
 [vscc]: https://msdn.microsoft.com/en-us/library/bb384838.aspx
